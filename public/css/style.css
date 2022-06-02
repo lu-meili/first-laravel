@@ -1,5 +1,10 @@
-body {
-    background-color: rgb(255, 239, 187);
+body{
 
-    font-family: "Roboto", sans-serif;
+   
+    padding: 30px;
+    width: 500px;
+    height: 500px;
+    text-align: justify;
+   
 }
+

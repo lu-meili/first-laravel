@@ -18,8 +18,15 @@ ts value for section title to "Mini Twitter" (section content is used in message
  <form action="/message/{{$message->id}}" method="post">
      @csrf
      @method('delete')
-     <button type="submit">Delete</button>
+     <button class="btn btn-outline-primary" type="submit">delete</button>
  </form>
+
+ <form action="/update/{{$message->id}}" method="post">
+   <input type="text" name="title" value="{{$message->title}}">
+   <input type="text" name="content" value="{{$message->content}}">
+   @csrf
+   <button class="btn btn-outline-primary" type="submit">edit</button>
+</form>
 
  @endsection
  

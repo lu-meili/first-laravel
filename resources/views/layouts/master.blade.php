@@ -1,5 +1,5 @@
  <!DOCTYPE html>
- <html lang="en">
+ <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
  <head>
    <meta charset="UTF-8">
@@ -8,17 +8,16 @@
    <!-- hier wird der Wert von der section "title" eines blade templates ausgefüllt,
    welches dieses layout "extended" -->
    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-
-
+   <!-- Scripts SASS-->
+   <script src="{{ asset('js/app.js') }}" defer></script>
+   <!-- Styles SASS-->
+   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
    <title>@yield('title')</title>
  </head>
 
  <body>
+ <img src="{{ asset('img/twit.png')}}">
    <!-- hier wird auch der Wert von der section "title" eines blade templates ausgefüllt,
    welches dieses layout "extended" -->
    <h1><a href="/messages">@yield('title')</a></h1>
@@ -27,7 +26,7 @@
    @yield('content')
    <!-- hier wird die php Funktion date() aufgerufen mit dem Format-Pattern 'd.m.Y'
     und im html ausgegeben-->
-   <div><b>Dummy Footer: {{date('d.m.Y')}}</b></div>
+   <div><b>Today is {{date('D, M Y')}}</b></div>
  </body>
 
  </html>
